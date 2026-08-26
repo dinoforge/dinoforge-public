@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <title>Stream Recorder 개인정보처리방침</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.7; }
+    body { margin: 0; background: #f5f7fb; color: #172033; }
+    main { box-sizing: border-box; max-width: 840px; margin: 0 auto; padding: 48px 24px 72px; }
+    article { background: #fff; border: 1px solid #dfe5ef; border-radius: 16px; padding: 36px clamp(24px, 5vw, 56px); box-shadow: 0 12px 32px rgb(25 40 70 / 8%); }
+    h1 { margin-top: 0; font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.2; }
+    h2 { margin-top: 2.2rem; font-size: 1.25rem; border-bottom: 1px solid #e7ebf2; padding-bottom: .35rem; }
+    p { margin: 1rem 0; }
+    .updated { color: #5c6b82; font-size: .95rem; }
+    a { color: #2458b8; }
+    footer { margin-top: 24px; color: #5c6b82; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <article>
+      <h1>Stream Recorder 개인정보처리방침</h1>
+      <p class="updated">최종 수정일: 2026-08-25</p>
+      <p>이 개인정보처리방침은 범용 <strong>Stream Recorder</strong> Chrome 확장 프로그램이 현재 코드에서 처리하는 정보를 설명합니다. AniLife 전용판에는 적용되지 않습니다.</p>
+
+      <h2>수집·처리 범위</h2>
+      <p>확장 프로그램은 사용자가 녹화를 명시적으로 시작한 경우에만 선택한 재생 탭의 탭 정보와 페이지의 미디어 재생 데이터를 처리합니다. 녹화 대상은 페이지 플레이어가 <code>MediaSource</code>/<code>SourceBuffer.appendBuffer()</code>로 브라우저에 전달한 오디오·영상 조각이며, 원격 원본 파일을 별도로 다시 다운로드하는 방식이 아닙니다.</p>
+      <p>탭 제목과 URL은 녹화 항목 식별, 파일명 생성, 중복 녹화 방지와 복구 화면 표시에 사용됩니다. 진단 정보로 내보낼 때 URL의 사용자 이름·비밀번호·query·hash는 제거됩니다.</p>
+
+      <h2>저장 위치와 결과 파일</h2>
+      <p>녹화 조각과 세션 메타데이터는 사용자의 브라우저 로컬 저장소에서 처리됩니다. 현재 구현은 IndexedDB spool을 사용하고, offscreen Worker가 OPFS에 MP4 결합 결과와 checkpoint를 기록할 수 있습니다. MP4 결과는 Chrome <code>downloads</code> API를 통해 사용자의 장치에 저장됩니다.</p>
+
+      <h2>외부 전송</h2>
+      <p>현재 범용판 소스에는 개발자 서버로 영상 본문, 전체 URL query, 쿠키 또는 인증정보를 전송하는 코드가 없습니다. 진단 bundle에도 영상 조각 본문, 쿠키, 인증 헤더와 전체 query를 포함하지 않도록 정규화합니다.</p>
+
+      <h2>DRM 및 권리</h2>
+      <p>캡처 중 DRM 표식(<code>senc</code>)이 감지되면 MP4 저장을 차단합니다. DRM 보호를 우회하거나, 로그인·지역 제한을 우회하거나, 사라진 원격 구간을 다시 받는 기능은 제공하지 않습니다. 사용자는 녹화하려는 미디어에 대해 필요한 이용 권한과 저작권을 스스로 확인해야 합니다.</p>
+
+      <h2>광고·판매·프로파일링</h2>
+      <p>현재 코드에는 처리 정보를 판매하거나 광고·프로파일링에 사용하는 기능이 없습니다.</p>
+
+      <h2>보관과 삭제</h2>
+      <p>녹화 세션과 spool은 복구와 다운로드 완료 확인을 위해 브라우저 로컬 저장소에 남을 수 있습니다. 확장 프로그램의 관리 화면에서 복구 가능한 세션을 확인하고, 사용자가 확인한 정리 항목만 삭제할 수 있습니다. 브라우저의 확장 프로그램 데이터 삭제·제거는 Chrome의 저장소 정책을 따릅니다.</p>
+
+      <h2>문의</h2>
+      <p>개인정보 또는 데이터 처리에 관한 문의는 <a href="https://github.com/dinoforge/stream-recorder/issues">저장소의 GitHub Issues</a> 또는 배포 페이지에 공개된 최신 연락처를 이용하십시오.</p>
+    </article>
+    <footer>Stream Recorder · <a href="https://github.com/dinoforge/stream-recorder">소스 저장소</a></footer>
+  </main>
+</body>
+</html>
