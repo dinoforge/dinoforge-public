@@ -1,7 +1,12 @@
-# Stream Recorder 개인정보처리방침
+# DinoForge 공개 정책 허브
 
-이 저장소는 범용 Stream Recorder Chrome 확장 프로그램의 공개 개인정보처리방침 페이지를 게시하기 위한 최소 정적 사이트입니다.
+DinoForge 제품의 Chrome Web Store 검토에 필요한 공개 개인정보처리방침과 정책 HTML을
+게시하는 저장소입니다. 소스 코드, ZIP, 빌드 산출물, 자격 증명은 포함하지 않습니다.
 
-- 공개 페이지: `index.html`
-- 확장 프로그램 소스, ZIP, 테스트, vendor, AniLife 관련 파일은 포함하지 않습니다.
-- 배포 주소: `https://dinoforge.github.io/stream-recorder-privacy/` (GitHub Pages 활성화 후)
+## 공개 정책
+
+- [DinoForge Cookie Bridge](https://raw.githubusercontent.com/dinoforge/dinoforge-public/main/media-downloader-cookie-bridge.html)
+- [Stream Recorder](https://raw.githubusercontent.com/dinoforge/dinoforge-public/main/index.html)
+
+정책 문서는 각 제품의 비공개 소스 저장소에서 검토한 뒤 이 저장소에 게시합니다.
+쿠키, 토큰, 비밀번호와 같은 민감한 값은 정책 문서에 넣지 않습니다.
